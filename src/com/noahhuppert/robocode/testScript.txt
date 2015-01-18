@@ -1,0 +1,3 @@
+turnGunRight 90
+fire 1
+ahead 100
