@@ -90,9 +90,6 @@ Assume all fields are private and getters and setters are written for each field
 
 #Specification
 ##Lexicon
-- Scope
- - Describes what parts of the program can access the object in question.
- - EX: `public` or `private`
 - Type
  - Describes the data structure to store the data in.
  - EX: `int` or `float`
@@ -116,9 +113,6 @@ Assume all fields are private and getters and setters are written for each field
 - Conditional
  - A Expression block that will either run or not run based on a condition
  - EX: `if` or `else`
-- Reserved Identifier
- - A word that signifies a special code block or type
- - EX: `class` or `array`
 - Expression
  - The simplest part of the program that can be run by itself
  - ie A line of the program
@@ -132,29 +126,20 @@ Inside this expression block there are a numerous expressions. The end of an exp
 `EXPRESSION_BLOCK_END` token. Some expressions can have expression blocks in them, like if statements.  
 
 ##Tokens
-- SCOPE
 - IDENTIFIER
 - TYPE
 - LITERAL
-- LITERAL_DELIMETER
+- LITERAL_DELIMITER
 - OPERATOR
 - ASSIGNMENT_OPERATOR
 - BOOLEAN_OPERATOR
 - CONDITIONAL
-- RESERVED_IDENTIFIER
 - OPTIONS_START
 - OPTIONS_END
+- OPTIONS_DELIMITER
 - EXPRESSION_END
 - EXPRESSION_BLOCK_START
 - EXPRESSION_BLOCK_END
-
-##Scopes
-- PUBLIC
- - Keyword: `public`
- - Can be accessed by anything
-- PRIVATE
- - Keyword: `private`
- - Can only be accessed by the object who owns the expression block
 
 ##Types
 - INTEGER
@@ -268,9 +253,3 @@ conditional:
 - ELSE_IF
  - Keyword: IF followed by ELSE
  - Runs the expression block if the previous conditional is false and its condition is true
-
-##Reserved Identifiers
-- ARRAY
- - Keyword: `array`
- - Signifies that the following identifier is is an array
- - Template: `<scope> <type> ARRAY <identifier>`
