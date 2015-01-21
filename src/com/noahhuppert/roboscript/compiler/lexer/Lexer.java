@@ -13,7 +13,6 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -43,7 +42,7 @@ public class Lexer {
         List<Token> tokens = new ArrayList<Token>();
         
         try{
-            int line = 0;
+            int line = 1;
             int column = 0;
             
             String tokenChars = "";
@@ -53,12 +52,12 @@ public class Lexer {
             while((readerResult = reader.read()) != -1) {
                 char c = (char) readerResult;
                 LexerStreamMode currentCharType = null;
+
+                column ++;
                 
-                if(c == '\n' || (int)c == 13){
+                if(c == '\n'){
                     line ++;
                     column = 0;
-                } else{
-                    column ++;
                 }
 
                 Location location = new Location(line, column);

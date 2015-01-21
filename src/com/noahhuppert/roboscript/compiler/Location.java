@@ -12,6 +12,12 @@ public class Location {
         this.column = column;
     }
     
+    /* Actions */
+    @Override
+    public String toString() {
+        return "(" + getLine() + ", " + getColumn() + ")";
+    }
+
     /* Getters */
     public int getLine() {
         return line;

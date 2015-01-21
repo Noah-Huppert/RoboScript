@@ -5,6 +5,7 @@ package com.noahhuppert.roboscript;
  */
 public class Test {
     public static void main(String args[]){
-        RoboScript roboScript = new RoboScript(System.out);
+        RoboScript roboScript = new RoboScript("src/com/noahhuppert/roboscript/test_script.rs", System.out);
+        roboScript.compile();
     }
 }

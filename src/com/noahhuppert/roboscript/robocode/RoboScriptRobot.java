@@ -1,7 +1,7 @@
 package com.noahhuppert.roboscript.robocode;
 
 import com.noahhuppert.roboscript.RoboScript;
-import robocode.*;
+import robocode.AdvancedRobot;
 
 import java.util.Arrays;
 import java.util.List;

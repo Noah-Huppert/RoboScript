@@ -1,27 +1,25 @@
 package com.noahhuppert.roboscript;
 
-import com.noahhuppert.roboscript.compiler.lexer.Lexer;
-import com.noahhuppert.roboscript.compiler.lexer.tokens.Token;
+import com.noahhuppert.roboscript.compiler.Compiler;
 
 import java.io.PrintStream;
-import java.util.List;
 
 /**
  * Created by Noah Huppert on 1/18/2015.
  */
 public class RoboScript {
     private PrintStream out;
-    private Lexer lexer;
+    private Compiler compiler;
     
-    public RoboScript(PrintStream out){
+    public RoboScript(String scriptPath, PrintStream out){
         this.out = out;
         
-        lexer = new Lexer();
-        List<Token> tokens = lexer.getFileTokens("src/com/noahhuppert/roboscript/test_script.rs", getOut());
-        
-        for(Token token: tokens){
-            out.println(token.getType() + " " + token.getCharacters() + "\n");
-        }
+        compiler = new Compiler(scriptPath, getOut());
+    }
+    
+    /* Actions */
+    public void compile(){
+        getCompiler().compile();
     }
     
     /* Getters */
@@ -29,8 +27,16 @@ public class RoboScript {
         return out;
     }
 
+    public Compiler getCompiler() {
+        return compiler;
+    }
+
     /* Setters */
     public void setOut(PrintStream out) {
         this.out = out;
+    }
+
+    public void setCompiler(Compiler compiler) {
+        this.compiler = compiler;
     }
 }

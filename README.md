@@ -141,6 +141,15 @@ Inside this expression block there are a numerous expressions. The end of an exp
 - EXPRESSION_BLOCK_START
 - EXPRESSION_BLOCK_END
 
+##Patterns
+- FUNCTION_CREATE
+- FUNCTION_BLOCK_CLOSE
+- FUNCTION_CALL
+- VARIABLE_CREATE
+- VARIABLE_REFERENCE
+- VARIABLE_ASSIGN
+- CONDITIONAL_CREATE
+
 ##Types
 - INTEGER
  - Keyword: `int`

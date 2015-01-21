@@ -16,6 +16,12 @@ public class Token {
         this.location = location;
     }
     
+    /* Actions */
+    @Override
+    public String toString() {
+        return getType() + "[\"" + getCharacters() + "\"]";
+    }
+
     /* Getters */
     public TokenType getType() {
         return type;
